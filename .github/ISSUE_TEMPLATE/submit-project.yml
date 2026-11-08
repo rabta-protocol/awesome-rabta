@@ -1,0 +1,69 @@
+name: Submit a project
+description: Suggest an app, client, tool, or guide for the list.
+title: "Add: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. Read [CONTRIBUTING.md](https://github.com/rabta-protocol/awesome-rabta/blob/main/CONTRIBUTING.md) first — the project must actually use Rabta, not just share the name.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      placeholder: My Rabta app
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Project URL
+      description: Public home page or repository.
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Apps and demos
+        - Clients and SDKs
+        - Tools and integrations
+        - Self-hosting
+        - Protocol and learning
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One sentence, starting with a capital letter and ending with a period.
+      placeholder: My app does X with Rabta.
+    validations:
+      required: true
+  - type: textarea
+    id: rabta-usage
+    attributes:
+      label: How does it use Rabta?
+      description: Name the API route, SDK, relay, or public node it depends on.
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author or maintainer
+      description: GitHub handle or project page.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have read CONTRIBUTING.md.
+          required: true
+        - label: The link is public and working.
+          required: true
+        - label: This is my project, or I have the maintainer's permission to list it.
+          required: true
+        - label: The project is not already in the list.
+          required: true

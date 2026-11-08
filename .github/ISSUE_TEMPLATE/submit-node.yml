@@ -1,0 +1,60 @@
+name: Submit a public node
+description: List a free, no-signup Rabta relay in the public nodes section.
+title: "Add node: "
+labels: ["node-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Public nodes are shared, unauthenticated infrastructure. Read the [public node requirements](https://github.com/rabta-protocol/awesome-rabta/blob/main/CONTRIBUTING.md#public-nodes) before submitting.
+  - type: input
+    id: url
+    attributes:
+      label: Node URL
+      placeholder: https://node.example.com
+    validations:
+      required: true
+  - type: input
+    id: operator
+    attributes:
+      label: Operator
+      description: GitHub handle or name of the person or organization running the node.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Rabta version
+      placeholder: 0.0.1
+  - type: textarea
+    id: limits
+    attributes:
+      label: Retention, storage, and rate limits
+      description: Disclose how long events and blobs live, the storage budget, and any rate limits.
+    validations:
+      required: true
+  - type: input
+    id: health
+    attributes:
+      label: Health check result
+      description: Paste the response from GET /api/v1/health.
+      placeholder: '{"live_blobs":1,"live_events":74,"status":"ok"}'
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: The node is reachable over public HTTPS with a valid certificate.
+          required: true
+        - label: /api/v1/health returns status ok.
+          required: true
+        - label: It is free to use without an invite, signup, or payment.
+          required: true
+        - label: I operate this node, or I have the operator's permission to list it.
+          required: true
+        - label: Best-effort uptime is acceptable.
+          required: true
+        - label: I have read CONTRIBUTING.md.
+          required: true
