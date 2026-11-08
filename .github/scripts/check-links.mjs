@@ -1,11 +1,16 @@
+import {execFile} from 'node:child_process';
 import {readFile} from 'node:fs/promises';
+import {promisify} from 'node:util';
 import {publicNodes} from './nodes.mjs';
 
 const FILES = ['README.md', 'CONTRIBUTING.md'];
 const SKIPPED_HOSTS = new Set(['img.shields.io', 'shields.io', 'awesome.re']);
 const USER_AGENT = 'awesome-rabta-link-check/1.0 (+https://github.com/rabta-protocol/awesome-rabta)';
-const TIMEOUT_MS = 20_000;
+const TIMEOUT_SECONDS = 20;
 const ATTEMPTS = 3;
+const CONCURRENCY = 4;
+
+const execFileAsync = promisify(execFile);
 
 const sleep = milliseconds => new Promise(resolve => {
 	setTimeout(resolve, milliseconds);
@@ -27,18 +32,35 @@ function extractLinks(markdown) {
 	return [...links].filter(url => !SKIPPED_HOSTS.has(new URL(url).hostname));
 }
 
-async function request(url) {
-	const response = await fetch(url, {
-		redirect: 'follow',
-		headers: {
-			'user-agent': USER_AGENT,
-			accept: 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
-		},
-		signal: AbortSignal.timeout(TIMEOUT_MS),
+async function mapLimit(items, limit, mapper) {
+	const results = new Array(items.length);
+	let index = 0;
+
+	const workers = Array.from({length: Math.min(limit, items.length)}, async () => {
+		while (index < items.length) {
+			const current = index++;
+			results[current] = await mapper(items[current]);
+		}
 	});
 
-	await response.body?.cancel();
-	return response.status;
+	await Promise.all(workers);
+	return results;
+}
+
+async function request(url) {
+	const {stdout} = await execFileAsync('curl', [
+		'--silent',
+		'--show-error',
+		'--location',
+		'--compressed',
+		'--max-time', String(TIMEOUT_SECONDS),
+		'--user-agent', USER_AGENT,
+		'--output', '/dev/null',
+		'--write-out', '%{http_code}',
+		url,
+	], {timeout: (TIMEOUT_SECONDS + 5) * 1000});
+
+	return Number.parseInt(stdout.trim(), 10);
 }
 
 async function checkUrl(url) {
@@ -62,7 +84,8 @@ async function checkUrl(url) {
 				break;
 			}
 		} catch (error) {
-			reason = error.name === 'TimeoutError' ? 'timeout' : error.message;
+			const message = error.stderr?.trim() || error.message;
+			reason = error.killed ? 'timeout' : message;
 		}
 
 		if (attempt < ATTEMPTS) {
@@ -77,7 +100,7 @@ async function checkNode(node) {
 	try {
 		const response = await fetch(`${node.url}/api/v1/health`, {
 			headers: {'user-agent': USER_AGENT},
-			signal: AbortSignal.timeout(TIMEOUT_MS),
+			signal: AbortSignal.timeout(TIMEOUT_SECONDS * 1000),
 		});
 
 		if (!response.ok) {
@@ -101,7 +124,7 @@ const markdown = (await Promise.all(FILES.map(async file => readFile(file, 'utf8
 const links = extractLinks(markdown);
 
 const [linkResults, nodeResults] = await Promise.all([
-	Promise.all(links.map(async url => ({url, ...await checkUrl(url)}))),
+	mapLimit(links, CONCURRENCY, async url => ({url, ...await checkUrl(url)})),
 	Promise.all(publicNodes.map(async node => ({node, ...await checkNode(node)}))),
 ]);
 
