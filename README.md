@@ -24,7 +24,16 @@ This list covers projects built on the Rabta Protocol, not unrelated projects th
 
 ## Public nodes
 
-Free, no-signup relays you can use today. The badges check each node's health endpoint and live counters; open the stats link for storage and sync details.
+Free, no-signup relays you can use today. Each card carries live badges; the table below is a snapshot refreshed weekly by CI.
+
+<!-- node-stats:start -->
+Last checked **2026-11-08 11:54 UTC** by the weekly stats workflow. Badges stay live between runs.
+
+| Node           | Status | Events | Blobs | Storage | Uptime  | Stats                                        |
+| -------------- | ------ | ------ | ----- | ------- | ------- | -------------------------------------------- |
+| 1.rabta.space  | live   | 74     | 1     | 3.9 MB  | 12h 26m | [stats](https://1.rabta.space/api/v1/stats)  |
+| rabta.t3nk.com | live   | 74     | 1     | 3.9 MB  | 1h 18m  | [stats](https://rabta.t3nk.com/api/v1/stats) |
+<!-- node-stats:end -->
 
 ### [1.rabta.space](https://1.rabta.space)
 
@@ -32,7 +41,7 @@ Free, no-signup relays you can use today. The badges check each node's health en
 ![live events](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2F1.rabta.space%2Fapi%2Fv1%2Fhealth&query=live_events&label=events&color=blue)
 ![live blobs](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2F1.rabta.space%2Fapi%2Fv1%2Fhealth&query=live_blobs&label=blobs&color=purple)
 
-The relay behind the [rabta.space](https://rabta.space) demos. Free, no signup, best-effort. [Stats](https://1.rabta.space/api/v1/stats).
+The relay behind the [rabta.space](https://rabta.space) demos. Free, no signup, best-effort.
 
 ### [rabta.t3nk.com](https://rabta.t3nk.com)
 
@@ -40,7 +49,7 @@ The relay behind the [rabta.space](https://rabta.space) demos. Free, no signup, 
 ![live events](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frabta.t3nk.com%2Fapi%2Fv1%2Fhealth&query=live_events&label=events&color=blue)
 ![live blobs](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frabta.t3nk.com%2Fapi%2Fv1%2Fhealth&query=live_blobs&label=blobs&color=purple)
 
-Community node operated by [@T3NK](https://github.com/T3NK). Free, no signup, best-effort. [Stats](https://rabta.t3nk.com/api/v1/stats).
+Community node operated by [@T3NK](https://github.com/T3NK). Free, no signup, best-effort.
 
 **Public means public.** These nodes are unauthenticated by design: anyone can read and write, and operators can see metadata. Encrypt payloads client-side, never post secrets, and run your own node for private data.
 
