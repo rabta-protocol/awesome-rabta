@@ -27,12 +27,12 @@ This list covers projects built on the Rabta Protocol, not unrelated projects th
 Free, no-signup relays you can use today. Each card carries live badges; the table below is a snapshot refreshed weekly by CI.
 
 <!-- node-stats:start -->
-Last checked **2026-11-08 11:54 UTC** by the weekly stats workflow. Badges stay live between runs.
+Last checked **2026-11-08 11:55 UTC** by the weekly stats workflow. Badges stay live between runs.
 
 | Node           | Status | Events | Blobs | Storage | Uptime  | Stats                                        |
 | -------------- | ------ | ------ | ----- | ------- | ------- | -------------------------------------------- |
-| 1.rabta.space  | live   | 74     | 1     | 3.9 MB  | 12h 26m | [stats](https://1.rabta.space/api/v1/stats)  |
-| rabta.t3nk.com | live   | 74     | 1     | 3.9 MB  | 1h 18m  | [stats](https://rabta.t3nk.com/api/v1/stats) |
+| 1.rabta.space  | live   | 74     | 1     | 3.9 MB  | 12h 27m | [stats](https://1.rabta.space/api/v1/stats)  |
+| rabta.t3nk.com | live   | 74     | 1     | 3.9 MB  | 1h 19m  | [stats](https://rabta.t3nk.com/api/v1/stats) |
 <!-- node-stats:end -->
 
 ### [1.rabta.space](https://1.rabta.space)
