@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Public nodes are shared, unauthenticated infrastructure. Read the [public node requirements](https://github.com/rabta-protocol/awesome-rabta/blob/main/CONTRIBUTING.md#public-nodes) before submitting.
+        Public nodes are shared, unauthenticated infrastructure. Read the [public node requirements](https://github.com/rabta-protocol/awesome-rabta/blob/main/CONTRIBUTING.md#nodes) before submitting.
   - type: input
     id: url
     attributes:

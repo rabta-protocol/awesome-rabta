@@ -4,12 +4,8 @@ Thanks for helping the Rabta ecosystem grow. This list covers projects built on 
 
 ## What belongs
 
+- **Nodes** — free, no-signup instances that meet the requirements below.
 - **Apps** — end-user experiences built on a Rabta node.
-- **Clients and SDKs** — libraries, language bindings, and starter kits.
-- **Tools and integrations** — CLIs, bots, bridges, backup and monitoring tools, and admin UIs.
-- **Self-hosting** — Compose stacks, reverse-proxy examples, and deployment guides.
-- **Protocol and learning** — tutorials, talks, articles, and protocol explanations.
-- **Public nodes** — free, no-signup instances that meet the requirements below.
 
 ## Entry format
 
@@ -34,7 +30,7 @@ Guidelines:
 - The project should be maintained or clearly usable; abandoned entries may be removed.
 - No duplicates, affiliate links, or referral links.
 
-## Public nodes
+## Nodes
 
 To list a node, it must:
 
@@ -46,7 +42,7 @@ To list a node, it must:
 - name its operator and disclose retention, storage, and rate limits;
 - accept best-effort uptime, if that is the case.
 
-Add the node to the table under **Public nodes** in `README.md`.
+Add the node to the table under **Nodes** in `README.md`.
 
 Public nodes are shared, unauthenticated infrastructure. Never encourage users to send plaintext secrets to one, and encrypt payloads client-side.
 
@@ -56,8 +52,6 @@ Public nodes are shared, unauthenticated infrastructure. Never encourage users t
 2. Add or update one entry.
 3. Run `npx awesome-lint` and fix any findings.
 4. Open a pull request titled `Add <project>` or `Add <node>`.
-
-New categories are welcome, but open an issue first so we can agree on the structure.
 
 ## Keeping the list accurate
 

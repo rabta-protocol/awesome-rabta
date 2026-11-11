@@ -27,11 +27,7 @@ body:
     attributes:
       label: Category
       options:
-        - Apps and demos
-        - Clients and SDKs
-        - Tools and integrations
-        - Self-hosting
-        - Protocol and learning
+        - Apps
     validations:
       required: true
   - type: textarea
