@@ -18,10 +18,10 @@
 
 ## Nodes
 
-| Node                                     | Operator                         | Description                                                     |
-| ---------------------------------------- | -------------------------------- | --------------------------------------------------------------- |
-| [1.rabta.space](https://1.rabta.space)   | Rabta project                    | Free, public relay with no signup.                              |
-| [rabta.t3nk.com](https://rabta.t3nk.com) | [@T3NK](https://github.com/T3NK) | Community node operated by @T3NK. Free, no signup, best-effort. |
+| Node                                     | Description                                                     |
+| ---------------------------------------- | --------------------------------------------------------------- |
+| [1.rabta.space](https://1.rabta.space)   | Free, public relay with no signup.                              |
+| [rabta.t3nk.com](https://rabta.t3nk.com) | Community node operated by @T3NK. Free, no signup, best-effort. |
 
 ## Apps
 
