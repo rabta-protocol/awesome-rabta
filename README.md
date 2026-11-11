@@ -17,7 +17,7 @@ This list covers projects built on the Rabta Protocol, not unrelated projects th
 
 - [Public nodes](#public-nodes)
 - [Official](#official)
-- [Apps and demos](#apps-and-demos)
+- [Apps](#apps)
 - [Self-hosting](#self-hosting)
 - [Protocol and learning](#protocol-and-learning)
 - [Community](#community)
@@ -40,12 +40,9 @@ Free, no-signup relays you can use today:
 - [Website source](https://github.com/rabta-protocol/website) - Source for rabta.space and its four browser-side demos.
 - [Container image](https://github.com/rabta-protocol/rabta/pkgs/container/rabta) - Multi-arch images for Linux/amd64 and Linux/arm64.
 
-## Apps and demos
+## Apps
 
-- [Canvas](https://rabta.space/paint.html) - Realtime 1000×1000 collaborative board; every stroke is signed in the browser.
-- [Share](https://rabta.space/share.html) - End-to-end encrypted file sharing for up to eight files and a note; the key stays in the URL fragment.
-- [World](https://rabta.space/world.html) - A world map where anyone can pin a signed comment to exact coordinates.
-- [Shoutbox](https://rabta.space/shout.html) - A public board where every message is signed in the browser.
+- [GUPT](https://github.com/besoeasy/gupt) - Anonymous digital life suite with encrypted chat & calls, passwords, notes, bookmarks, and ephemeral sharing — with no phone number, no email, and no server account.
 
 ## Self-hosting
 

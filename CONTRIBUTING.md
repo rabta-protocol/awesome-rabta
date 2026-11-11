@@ -4,7 +4,7 @@ Thanks for helping the Rabta ecosystem grow. This list covers projects built on 
 
 ## What belongs
 
-- **Apps and demos** — end-user experiences built on a Rabta node.
+- **Apps** — end-user experiences built on a Rabta node.
 - **Clients and SDKs** — libraries, language bindings, and starter kits.
 - **Tools and integrations** — CLIs, bots, bridges, backup and monitoring tools, and admin UIs.
 - **Self-hosting** — Compose stacks, reverse-proxy examples, and deployment guides.
