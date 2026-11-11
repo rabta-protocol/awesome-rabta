@@ -46,7 +46,7 @@ To list a node, it must:
 - name its operator and disclose retention, storage, and rate limits;
 - accept best-effort uptime, if that is the case.
 
-Add the node under **Public nodes** in `README.md`, following the existing card format. The status and counter badges query the node's own health endpoint.
+Add the node to the table under **Public nodes** in `README.md`.
 
 Public nodes are shared, unauthenticated infrastructure. Never encourage users to send plaintext secrets to one, and encrypt payloads client-side.
 
